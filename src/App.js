@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Forms from "./Components/Forms";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Fillers from "./Components/Fillers";
+import CoverPage from "./Components/CoverPage";
+import UploadPic from "./Components/UploadPic";
+export default function App() {
 
-function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Forms/>}/>
+          <Route path="/fillers" element={<Fillers/>}/>
+          <Route path="/UploadPic" element={<UploadPic/>}/>
+          <Route path="/CoverPage" element={<CoverPage/>}/>
+        </Routes>
+      </BrowserRouter>
+        
+    </>
+    )
+    
 }
-
-export default App;
